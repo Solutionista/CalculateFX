@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="400.0" style="-fx-border-color: black; -fx-border-width: 4;" stylesheets="@calcstyle.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.sterzsolutions.calculatefx.CalculatorControl">
+   <top>
+      <JFXTextArea fx:id="mainDisplay" editable="false" prefColumnCount="16" prefHeight="151.0" prefRowCount="3" prefWidth="372.0" styleClass="text-area" unFocusColor="#4059a9" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+         <font>
+            <Font name="Consolas" size="36.0" />
+         </font>
+      </JFXTextArea>
+   </top>
+   <center>
+      <GridPane maxHeight="425.0" maxWidth="390.0" minHeight="425.0" minWidth="390.0" prefHeight="425.0" prefWidth="390.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="btnBracketsOpen" alignment="CENTER" layoutX="20.0" layoutY="96.0" maxHeight="107.0" maxWidth="133.0" minHeight="69.0" minWidth="85.0" onMouseClicked="#setBracketsOpen" prefHeight="107.0" prefWidth="133.0" style="-fx-background-color: #41aea7;" text="( " textAlignment="CENTER" GridPane.columnIndex="1">
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="btnBracketsClose" alignment="CENTER" layoutX="20.0" layoutY="22.0" maxHeight="127.0" maxWidth="179.0" minHeight="69.0" minWidth="85.0" onMouseClicked="#setBracketsClose" prefHeight="73.0" prefWidth="99.0" style="-fx-background-color: #41aea7;" text=" )" GridPane.columnIndex="2">
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="btnDivide" alignment="CENTER" maxHeight="116.0" maxWidth="85.0" minHeight="69.0" minWidth="85.0" onMouseClicked="#setOperator" prefHeight="116.0" prefWidth="85.0" style="-fx-background-color: #41aea7;" text="/" GridPane.columnIndex="3">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="System Bold" size="31.0" />
+               </font>
+            </Label>
+            <Label fx:id="btnSeven" alignment="CENTER" maxHeight="145.0" maxWidth="85.0" minHeight="69.0" minWidth="85.0" onMouseClicked="#setNumber" prefHeight="145.0" prefWidth="85.0" style="-fx-background-color: #41aea7;" text="7" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+            </Label>
+            <Label fx:id="btnEight" alignment="CENTER" maxHeight="116.0" maxWidth="85.0" minHeight="69.0" minWidth="85.0" onMouseClicked="#setNumber" prefHeight="116.0" prefWidth="85.0" style="-fx-background-color: #41aea7;" text="8" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="btnNine" alignment="CENTER" layoutX="115.0" layoutY="15.0" maxHeight="112.0" maxWidth="85.0" minHeight="69.0" minWidth="85.0" onMouseClicked="#setNumber" prefHeight="112.0" prefWidth="85.0" style="-fx-background-color: #41aea7;" text="9" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+            </Label>
+            <Label fx:id="btnMultiply" alignment="CENTER" maxHeight="152.0" maxWidth="85.0" minHeight="69.0" minWidth="85.0" onMouseClicked="#setOperator" prefHeight="152.0" prefWidth="85.0" style="-fx-background-color: #41aea7;" text="*" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+            </Label>
+            <Label fx:id="btnFour" alignment="CENTER" maxHeight="117.0" maxWidth="85.0" minHeight="69.0" minWidth="85.0" onMouseClicked="#setNumber" prefHeight="117.0" prefWidth="85.0" style="-fx-background-color: #41aea7;" text="4" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+            </Label>
+            <Label fx:id="btnFive" alignment="CENTER" maxHeight="140.0" maxWidth="85.0" minHeight="69.0" minWidth="85.0" onMouseClicked="#setNumber" prefHeight="140.0" prefWidth="85.0" style="-fx-background-color: #41aea7;" text="5" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="btnSix" alignment="CENTER" maxHeight="156.0" maxWidth="85.0" minHeight="69.0" minWidth="85.0" onMouseClicked="#setNumber" prefHeight="156.0" prefWidth="85.0" style="-fx-background-color: #41aea7;" text="6" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+            </Label>
+            <Label fx:id="btnMinus" alignment="CENTER" maxHeight="194.0" maxWidth="85.0" minHeight="69.0" minWidth="85.0" onMouseClicked="#setOperator" prefHeight="194.0" prefWidth="85.0" style="-fx-background-color: #41aea7;" text="-" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <font>
+                  <Font size="32.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </Label>
+            <Label alignment="CENTER" maxHeight="137.0" maxWidth="85.0" minHeight="69.0" minWidth="85.0" onMouseClicked="#setNumber" prefHeight="137.0" prefWidth="85.0" style="-fx-background-color: #41aea7;" text="1" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" maxHeight="116.0" maxWidth="85.0" minHeight="69.0" minWidth="85.0" onMouseClicked="#setNumber" prefHeight="116.0" prefWidth="85.0" style="-fx-background-color: #41aea7;" text="2" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+            </Label>
+            <Label fx:id="btnThree" alignment="CENTER" maxHeight="122.0" maxWidth="85.0" minHeight="69.0" minWidth="85.0" onMouseClicked="#setNumber" prefHeight="122.0" prefWidth="85.0" style="-fx-background-color: #41aea7;" text="3" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="btnPlus" alignment="CENTER" onMouseClicked="#setOperator" prefHeight="115.0" prefWidth="85.0" style="-fx-background-color: #41aea7;" text="+" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </Label>
+            <Label alignment="CENTER" onMouseClicked="#setNumber" prefHeight="104.0" prefWidth="190.0" style="-fx-background-color: #41aea7;" text="0" GridPane.columnSpan="2" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" maxHeight="149.0" maxWidth="85.0" minHeight="69.0" minWidth="85.0" onMouseClicked="#setComma" prefHeight="149.0" prefWidth="85.0" style="-fx-background-color: #41aea7;" text="." GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" onMouseClicked="#result" prefHeight="119.0" prefWidth="85.0" style="-fx-background-color: #41aea7;" text="=" GridPane.columnIndex="3" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </Label>
+            <Label alignment="CENTER" layoutX="115.0" layoutY="20.0" maxHeight="107.0" maxWidth="133.0" minHeight="69.0" minWidth="85.0" onMouseClicked="#delete" prefHeight="107.0" prefWidth="133.0" style="-fx-background-color: RED;" text="DEL" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold Italic" size="32.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </Label>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </GridPane>
+   </center>
+   <bottom>
+      <Label fx:id="errorLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="37.0" prefWidth="400.0" text="!!!ERROR!!! Please Check your Entry !!!ERROR!!!" visible="false" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+   </bottom>
+</BorderPane>
